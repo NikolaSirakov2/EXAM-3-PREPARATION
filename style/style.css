@@ -20,3 +20,21 @@ body {
     flex-wrap: wrap;
     gap: 10px;
 }
+
+#details {
+    background-color: aqua;
+}
+
+#detailsContainer {
+    background-color: bisque;
+}
+
+.detailsCard {
+    background-color: rgb(142, 233, 162);
+    display: flex;
+    
+}
+
+.detailsCard img {
+    width: 900px;
+}
