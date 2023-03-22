@@ -38,13 +38,14 @@ class ListingController {
           <div class="card-body">
             <h5 class="card-title">${parties.name}</h5>
             <p class="card-text">${parties.slogan}</p>
-            <a href="#details" class="btn btn-primary">details</a>
+            <a href="#details" class="btn btn-primary" id="detailsButton">details</a>
             <a href="#vote" class="btn btn-primary">vote</a>
           </div>`;
   
       container.appendChild(card);
     });
   };
+
 }
 
 
