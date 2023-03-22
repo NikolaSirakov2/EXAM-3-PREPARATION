@@ -31,6 +31,8 @@ class ListingController {
     list.forEach((parties) => {
       let card = document.createElement("div");
       card.classList.add("card");
+      card.style.width = "200px";
+      card.style.background = "coral"
   
       card.innerHTML = `<img src="${parties.picture}" class="card-img-top" alt="...">
           <div class="card-body">
