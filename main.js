@@ -8,6 +8,7 @@ class ViewController {
         this.registerController = new RegisterController(this.userManager);
         this.logInController = new LogInController(this.userManager);
         this.listingController = new ListingController(this.partiesManager);
+        this.detailsController = new DetailsController(this.partiesManager);
    }
 
     handleHashChange = (e) => {
@@ -36,7 +37,9 @@ class ViewController {
                 this.logInController.render();
                 break; 
             case 'listings':
-                this.listingController.render();  
+                this.listingController.render();
+            case 'details' :
+                this.detailsController.render();
         }
     }
 }
