@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EXAM 3</title>
+    <script src="./constants.js"></script>
+    <script src="./utilis.js"></script>
+    <script src="./model/UserManager.js"></script>
+    <script src="./model/RegisterController.js"></script>
+    <script src="./model/LogInController.js"></script>
+    <script src="./model/PartiesManager.js"></script>
+    <script src="./model/ListingCotroller.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        #register {
+            width: 400px;
+            margin: auto;
+            background-color: aqua;
+        }
+
+        #login {
+            width: 400px;
+            margin: auto;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#listings">Listings</a>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link" aria-current="page" href="#details">Details</a>
+                  <a class="nav-link" href="#results">Results</a>
+                  <a class="nav-link" href="#login">Login</a>
+                  <a class="nav-link" href="#register">Register</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    
+
+        <div id="login" class="text-center">
+            <form id="loginForm">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">User name</label>
+                  <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+              </form>
+        </div>
+
+        <div id="register" class="text-center">
+            <form id="regForm">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">User name</label>
+                  <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                    <input name="confirmPass" type="password" class="form-control" id="exampleInputPassword1" required>
+                  </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+        </div>
+
+        <div id="listings">
+          <input type="text" id="searchPartiesInput">
+          <div id="partiesContainer">
+
+
+          </div>
+        </div>
+        <div id="results"></div>
+        <div id="details"></div>
+        <div id="error">Page not found!</div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
