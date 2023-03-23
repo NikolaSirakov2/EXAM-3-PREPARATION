@@ -35,6 +35,7 @@ class ViewController {
                 this.registerController.render();
                 break;
             case 'login':
+                localStorage.loggedUser = [];
                 this.logInController.render();
                 break; 
             case 'listings':
