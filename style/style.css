@@ -1,67 +1,78 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #register {
-    width: 400px;
-    margin: auto;
-    background-color: aqua;
+  width: 400px;
+  margin: auto;
+  background-color: aqua;
 }
 
 #login {
-    width: 400px;
-    margin: auto;
-    background-color: bisque;
+  width: 400px;
+  margin: auto;
+  background-color: bisque;
 }
 
 #partiesContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 #details {
-    background-color: aqua;
+  background-color: aqua;
 }
 
 #detailsContainer {
-    background-color: bisque;
+  background-color: bisque;
 }
 
 .detailsCard {
-    background-color: rgb(142, 233, 162);
-    display: flex;
+  background-color: rgb(142, 233, 162);
+  display: flex;
 }
 
 .detailsCard span {
-    margin: 20px;
+  margin: 20px;
 }
 
 .detailsCard img {
-    width: 999px;
-
+  width: 999px;
 }
 
 .detailsCard .card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-#results tr{
-    width: 600px;
+#results tr {
+  width: 600px;
 }
 
 .table {
-    height: 100px;
-    width: 60vw;
-    position: absolute;
-    background-color: darkgoldenrod;
+  height: 100px;
+  width: 60vw;
+  position: absolute;
+  background-color: darkgoldenrod;
 }
 
 tr {
-    width: 600px;
+  width: 600px;
+}
+
+#voteForUs {
+  border: 1px;
+  border-radius: 9%;
+  height: 38px;
+  width: 110px;
+  position: absolute;
+  right: 240px;
+  top: 448px;
+  background-color: rgb(85, 123, 194);
+  color: white
 }
