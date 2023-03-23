@@ -7,6 +7,10 @@ class ResultsController {
 
     render = () => {
 
-        
+        let name = getElement("partieName")
+        let resultsPercetage = getElement("partieResults")
+
+        name.innerText = "300";
+        resultsPercetage.innerText = "12%"
     }
 }
