@@ -50,3 +50,14 @@ body {
     justify-content: center;
     gap: 20px;
 }
+
+#results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table {
+    height: 100px;
+    
+    background-color: darkgoldenrod;
+}
