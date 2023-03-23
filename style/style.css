@@ -70,9 +70,9 @@ tr {
   border-radius: 9%;
   height: 38px;
   width: 110px;
-  position: absolute;
+  position: relative;
   right: 240px;
-  top: 448px;
+  top: 405px;
   background-color: rgb(85, 123, 194);
   color: white
 }
