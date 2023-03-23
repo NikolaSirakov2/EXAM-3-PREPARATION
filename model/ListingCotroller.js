@@ -39,11 +39,30 @@ class ListingController {
             <h5 class="card-title">${parties.name}</h5>
             <p class="card-text">${parties.slogan}</p>
             <a href="#details" class="btn btn-primary" id="detailsButton">details</a>
-            <a href="#vote" class="btn btn-primary">vote</a>
+            
           </div>`;
+
+      let  vote= createElement("button");
+      
+      vote.innerText = "vote";
+      
+
+      vote.addEventListener("click", (e) => {
+        let vote = JSON.parse(localStorage.loggedUser);
+        if(vote.hasVoted === true){
+            alert("You already voted!")
+        } else {
+        vote.hasVoted = true;
+        localStorage.setItem('loggedUser', JSON.stringify(vote))
+      }})
+    
+
+      card.appendChild(vote)
   
       container.appendChild(card);
     });
+
+    
   };
 
 }
