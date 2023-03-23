@@ -26,3 +26,7 @@ function debounce (action,second) {
         timerId = setTimeout(action, second, ...event);
     }
 }
+
+function createElement(tag) {
+    return document.createElement(tag)
+}
