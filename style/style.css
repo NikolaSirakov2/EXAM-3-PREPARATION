@@ -51,13 +51,17 @@ body {
     gap: 20px;
 }
 
-#results {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#results tr{
+    width: 600px;
 }
+
 .table {
     height: 100px;
-    
+    width: 60vw;
+    position: absolute;
     background-color: darkgoldenrod;
+}
+
+tr {
+    width: 600px;
 }
