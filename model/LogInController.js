@@ -5,7 +5,9 @@ class LogInController {
     }
 
     render = () => {
-
+        let header = document.getElementById("headerText");
+        header.innerText = "";
+        
         let form = getElement("loginForm");
 
         form.onsubmit = (event) => {
@@ -20,6 +22,7 @@ class LogInController {
                 this.userManager.logIn(username, password)
                 .then(data => {
                     location.hash = 'listings';
+                    header.innerText = `Hi, ${username}! Welcome to E-lections!`
                 })
                 .catch(error => {
                     alert(error)
