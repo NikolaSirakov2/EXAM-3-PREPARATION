@@ -5,8 +5,15 @@ class LogInController {
     }
 
     render = () => {
+        
+        let ar = getElement("ar")
         let header = document.getElementById("headerText");
+        let userManag = getElement("userManag");
+
+        ar.innerText = "";
         header.innerText = "";
+        userManag.innerText = "Register";
+        userManag.href = "#register";
         
         let form = getElement("loginForm");
 
@@ -21,6 +28,8 @@ class LogInController {
 
                 this.userManager.logIn(username, password)
                 .then(data => {
+                    ar.innerText = "Listings";
+                    userManag.innerText = "LogOut";
                     location.hash = 'listings';
                     header.innerText = `Hi, ${username}! Welcome to E-lections!`
                 })
