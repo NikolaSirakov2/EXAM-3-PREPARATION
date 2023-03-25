@@ -7,6 +7,11 @@ class RegisterController {
     render = () => {
 
         let form = getElement("regForm");
+        let userManag = getElement("userManag");
+
+    
+        userManag.innerText = "LogIn";
+        userManag.href = "#login";
 
         form.onsubmit = (event) => {
                 event.preventDefault();
