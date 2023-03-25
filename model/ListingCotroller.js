@@ -4,6 +4,7 @@ class ListingController {
   }
 
   render = () => {
+    
     let inputSearch = getElement("searchPartiesInput");
     let partiesContainer = getElement("partiesContainer");
     partiesContainer.innerHTML = "";
@@ -42,29 +43,26 @@ class ListingController {
             
           </div>`;
 
-      let  vote= createElement("button");
+          let  vote= createElement("button");
       
-      vote.innerText = "vote";
-      
-
-      vote.addEventListener("click", (e) => {
-        let vote = JSON.parse(localStorage.loggedUser);
-        if(vote.hasVoted === true){
-            alert("You already voted!")
-        } else {
-        vote.hasVoted = true;
-        localStorage.setItem('loggedUser', JSON.stringify(vote))
-      }})
+          vote.innerText = "vote";
+          
     
-
-      card.appendChild(vote)
+          vote.addEventListener("click", (e) => {
+            let vote = JSON.parse(localStorage.loggedUser);
+            if(vote.hasVoted === true){
+                alert("You already voted!")
+            } else {
+            vote.hasVoted = true;
+            localStorage.setItem('loggedUser', JSON.stringify(vote))
+          }})
+        
+    
+          card.appendChild(vote)
+      
   
       container.appendChild(card);
-    });
 
-    
+    }); 
   };
-
 }
-
-
