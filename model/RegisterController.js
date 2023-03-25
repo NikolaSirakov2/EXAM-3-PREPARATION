@@ -5,7 +5,10 @@ class RegisterController {
     }
 
     render = () => {
-
+        let link = getElement("link")
+        let headerText = getElement("headerText")
+        link.innerText = "";
+        headerText.innerText = "";
         let form = getElement("regForm");
         let userManag = getElement("userManag");
 
