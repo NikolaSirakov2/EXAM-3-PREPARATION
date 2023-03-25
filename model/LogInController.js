@@ -6,11 +6,11 @@ class LogInController {
 
     render = () => {
         
-        let ar = getElement("ar")
+        let link = getElement("link")
         let header = document.getElementById("headerText");
         let userManag = getElement("userManag");
 
-        ar.innerText = "";
+        link.innerText = "";
         header.innerText = "";
         userManag.innerText = "Register";
         userManag.href = "#register";
