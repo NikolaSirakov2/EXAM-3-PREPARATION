@@ -13,7 +13,9 @@ class ViewController {
    }
 
     handleHashChange = (e) => {
-        const hash = location.hash.slice(1) || PAGE_IDS[0];
+
+        
+        const hash = location.hash.slice(1) || PAGE_IDS[1];
 
         if(!PAGE_IDS.includes(hash)){
             location.hash = "error";
