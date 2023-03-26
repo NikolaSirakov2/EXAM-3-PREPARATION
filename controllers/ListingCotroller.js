@@ -22,11 +22,14 @@ class ListingController {
     }, 500);
 
     this.partiesManager.getAll().then((data) => {
+    
       this.renderPartiesContainer(data, partiesContainer);
     });
   };
 
   renderPartiesContainer = (list, container) => {
+    
+
     list.forEach((parties) => {
       let card = document.createElement("div");
       card.classList.add("card");
