@@ -15,6 +15,12 @@ class ViewController {
   }
 
   handleHashChange = (e) => {
+    let header = document.getElementById("headerText");
+
+    if(localStorage.loggedUser){
+        header.innerText = `Hi, ${JSON.parse(localStorage.loggedUser).username}! Welcome to E-lections!`;
+    }
+    
     const hash = location.hash.slice(1) || PAGE_IDS[1];
 
     if (!PAGE_IDS.includes(hash)) {
