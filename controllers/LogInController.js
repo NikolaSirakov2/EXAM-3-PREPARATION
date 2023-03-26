@@ -31,7 +31,7 @@ class LogInController {
                     link.innerText = "Listings";
                     userManag.innerText = "LogOut";
                     location.hash = 'listings';
-                    header.innerText = `Hi, ${username}! Welcome to E-lections!`
+                    header.innerText = `Hi, ${username}! Welcome to E-lections!`;
                 })
                 .catch(error => {
                     alert(error)
