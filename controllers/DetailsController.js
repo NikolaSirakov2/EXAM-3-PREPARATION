@@ -31,7 +31,7 @@ class DetailsController {
     let agitation = document.createElement("p");
     agitation.innerText = partie.agitation;
 
-    let buttonsDiv = document.createElement("div");
+    
 
     let voteForUs = document.createElement("a");
     voteForUs.innerText = "Vote";
@@ -57,10 +57,8 @@ class DetailsController {
       this.resultsController.render();
     };
 
-  
-
-    buttonsDiv.append(voteForUs, viewResultsBtn);
-    cardRight.append(leaderName, agitation, buttonsDiv);
+    cardRight.append(leaderName, agitation, voteForUs, viewResultsBtn);
+    
   }  catch {
       console.log("Parties is still undefined, but when we load next page everything will work fine!");
     }
