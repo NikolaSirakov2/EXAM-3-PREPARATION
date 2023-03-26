@@ -54,11 +54,12 @@ class DetailsController {
     viewResultsBtn.onclick = (event) => {
       event.preventDefault();
 
-      this.resultsController.render();
+      location.hash = "results";
+      
     };
 
     cardRight.append(leaderName, agitation, voteForUs, viewResultsBtn);
-    
+
   }  catch {
       console.log("Parties is still undefined, but when we load next page everything will work fine!");
     }
