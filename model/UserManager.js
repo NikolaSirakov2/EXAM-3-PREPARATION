@@ -36,4 +36,37 @@ class UserManager {
                 localStorage.setItem('loggedUser', JSON.stringify({hasVoted, sessionId, username}))
         })
     }
+
+    logOut = (sessionId) => {
+
+        localStorage.setItem('loggedUser', null);
+
+        return makeAPICall(SERVER_URL + "/logout", {
+            method: "POST",
+            headers: {
+                "Content-type" : "application/json"
+            },
+            body: JSON.stringify({
+                id: sessionId
+            })
+        })
+        
+    }
+
+    vote = (partieID) => {
+
+        let sessionId = JSON.parse(localStorage.getItem("loggedUser")).sessionId;
+
+        return makeAPICall(SERVER_URL + `/vote/${partieID}`, {
+            method: "POST",
+            headers: {
+                "identity": sessionId,
+                "Content-type" : "application/json"
+            },
+        })
+        .then(res => {
+           console.log(res);
+        })
+        
+    }
 }
