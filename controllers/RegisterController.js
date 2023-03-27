@@ -25,6 +25,7 @@ class RegisterController {
 
                 console.log(username, password, confirmPass);
 
+                if(password === confirmPass){
                 this.userManager.register(username, password)
                 .then(data => {
                     location.hash = 'login';
@@ -32,6 +33,9 @@ class RegisterController {
                 .catch(error => {
                     alert(error)
                 })
+                } else {
+                    alert("Confirm your password!!!")
+                }
 
                 form.reset();
         }
