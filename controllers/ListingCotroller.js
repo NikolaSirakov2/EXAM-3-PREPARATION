@@ -50,29 +50,33 @@ class ListingController {
       detailsBtn.classList.add("btn", "btn-primary");
       detailsBtn.innerText = "Details";
 
+      
+
       vote.addEventListener("click", (e) => {
         let voteLog = JSON.parse(localStorage.loggedUser);
+
         if (voteLog.hasVoted === true) {
           alert("You already voted!");
         } else {
           voteLog.hasVoted = true;
           localStorage.setItem("loggedUser", JSON.stringify(voteLog));
+              this.userManager.vote(parties.id)
+                        .then(result => {
+                            this.render(result);
+                        })
+                        .catch(err =>{
+                          alert(err)
+                        })
         }
       });
 
       detailsBtn.onclick = (e) => {
-
         e.preventDefault();
-        
-        
-
         this.detailsManager.getDetails(parties.id)
             .then(result => {
               console.log(result);
                 this.detailsController.render(result);
             })
-
-        
             location.hash = 'details';
     }
 
