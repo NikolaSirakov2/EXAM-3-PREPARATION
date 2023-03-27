@@ -17,9 +17,12 @@ class ResultsManager {
             }
         })
         .then(results => {
+
                 let allVoters = results.reduce((acc, parties) => {
                     return acc + parties.voters;
                 }, 0)
+
+                console.log(allVoters);
 
                 return results.map(party => {
 
@@ -46,8 +49,7 @@ class ResultsManager {
         })
         .then(res => {
 
-            console.log(res);
-
+            
             for (let i = 0; i < res.length; i++) {
 
                 overallResults[i].partyId = res[i].name
