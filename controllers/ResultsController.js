@@ -8,7 +8,6 @@ class ResultsController {
         
         
         let array = this.resultsManager.getResults();
-        console.log(array);
 
         let body = getEl('resultsTable');
         body.innerHTML = "";
