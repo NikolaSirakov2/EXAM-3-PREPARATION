@@ -7,9 +7,10 @@ class ViewController {
     this.detailsManager = new DetailsManager();
     this.resultsManager = new ResultsManager(this.detailsManager);
 
-    this.resultsController = new ResultsController(this.resultsManager);
+    
     this.registerController = new RegisterController(this.userManager);
     this.logInController = new LogInController(this.userManager);
+    this.resultsController = new ResultsController(this.resultsManager);
     this.detailsController = new DetailsController(this.userManager, this.resultsManager, this.resultsController);
     this.listingController = new ListingController(this.partiesManager, this.detailsManager, this.detailsController, this.userManager);
   }
