@@ -54,8 +54,10 @@ class ListingController {
 
       vote.addEventListener("click", (e) => {
         let voteLog = JSON.parse(localStorage.loggedUser);
+        location.hash = "test";
 
         if (voteLog.hasVoted === true) {
+          
           alert("You already voted!");
         } else {
           voteLog.hasVoted = true;

@@ -52,8 +52,75 @@ class ViewController {
         this.detailsController.render();
       case "results":
         this.resultsController.render();
+      case "test" :
+        this.renderTestPage();
     }
   };
+
+
+  renderTestPage = () => {
+
+    let sessionId = JSON.parse(localStorage.getItem('loggedUser')).sessionId;
+
+    let rawResults = [];
+    let container = document.getElementById("testContainer");
+        container.innerHTML = "";
+      
+        let allResults = makeAPICall(SERVER_URL + "/results", {
+          headers: {
+            "identity": sessionId
+          }
+        })
+
+        allResults
+        .then(res => {
+                
+                let totalVoters = res.reduce((acc, curr) => {
+                    return acc + curr.voters;
+                }, 0)
+
+                return res.map(party => {
+                    party.voters = Number((party.voters / totalVoters * 100).toFixed(2));
+                    return party;
+                }).sort((a, b) => {
+                    return b.voters - a.voters;
+                })
+
+            })
+
+            .then(result => {
+                
+                rawResults = result;
+                let partyArr = [];
+
+                result.forEach(party => {
+                    partyArr.push(makeAPICall(SERVER_URL + `/party/${party.partyId}`,{
+                      headers: {
+                          'identity': sessionId
+                      }
+                  }))
+                });
+
+                return Promise.all(partyArr)
+            })
+            .then(test => {
+              
+                for (let i = 0; i < test.length; i++) {
+                    rawResults[i].partyId = test[i].name
+                }
+
+                rawResults.forEach(party => {
+                  let tr = document.createElement('tr');
+                let partyTd = document.createElement('td');
+                partyTd.innerText = party.partyId;
+                let resultTd = document.createElement('td');
+                resultTd.innerText = party.voters;
+
+                tr.append(partyTd,resultTd);
+                  container.appendChild(tr);
+                })
+            })
+  }
 }
 
 let viewController = new ViewController();
