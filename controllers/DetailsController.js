@@ -11,6 +11,8 @@ class DetailsController {
     
     try{
 
+    let id = partie._id;
+
     let cardLeft = getEl("detailsContainerLeft");
     cardLeft.innerHTML = "";
 
@@ -34,16 +36,26 @@ class DetailsController {
     
 
     let voteForUs = document.createElement("a");
-    voteForUs.innerText = "Vote";
+    voteForUs.innerText = "Vote for Us";
     voteForUs.classList.add("btn", "btn-primary");
 
     voteForUs.addEventListener("click", (e) => {
       let voteLog = JSON.parse(localStorage.loggedUser);
+      
+
       if (voteLog.hasVoted === true) {
         alert("You already voted!");
       } else {
         voteLog.hasVoted = true;
         localStorage.setItem("loggedUser", JSON.stringify(voteLog));
+        console.log(id);
+            this.userManager.vote(id)
+                      .then(result => {
+                          this.render(result);
+                      })
+                      .catch(err =>{
+                        alert(err)
+                      })
       }
     });
 
