@@ -30,7 +30,7 @@ class ListingController {
   renderPartiesContainer = (list, container) => {
     
 
-    list.forEach((parties) => {
+      list.forEach((parties) => {
       let card = document.createElement("div");
       card.classList.add("card");
       card.style.width = "200px";
